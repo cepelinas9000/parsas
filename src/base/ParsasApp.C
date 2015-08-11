@@ -13,10 +13,9 @@ InputParameters validParams<ParsasApp>()
   return params;
 }
 
-ParsasApp::ParsasApp(const std::string & name, InputParameters parameters) :
-    MooseApp(name, parameters)
+ParsasApp::ParsasApp(InputParameters parameters) :
+    MooseApp(parameters)
 {
-  srand(processor_id());
 
   Moose::registerObjects(_factory);
   ModulesApp::registerObjects(_factory);
